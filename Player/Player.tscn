@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Player/Light cruiser_04.fbx" type="PackedScene" id=1]
+
+[node name="Player" type="Spatial"]
+
+[node name="Ship" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
+
+[node name="CameraBase" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.0285, 0 )
+
+[node name="CameraRot" type="Spatial" parent="CameraBase"]
+
+[node name="SpringArm" type="SpringArm" parent="CameraBase/CameraRot"]
+transform = Transform( 1, 0, 0, 0, 0.970296, 0.241922, 0, -0.241922, 0.970296, 0, 0, 0 )
+collision_mask = 0
+spring_length = 75.0
+
+[node name="Camera" type="Camera" parent="CameraBase/CameraRot/SpringArm"]
+far = 300.0
