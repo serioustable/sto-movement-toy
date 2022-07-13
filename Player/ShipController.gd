@@ -1,14 +1,14 @@
 extends KinematicBody
 
-export var max_yaw_speed := 50.0
-export var max_pitch_speed := 50.0
+export var max_yaw_speed := 26.0
+export var max_pitch_speed := 26.0
 export var max_pitch_angle := 60.0
 export var max_roll_offset := 45.0
-export var roll_rate := 1.0
-export var max_forward_speed := 200.0
-export var accel_rate := 0.6
-export var decel_rate := 0.4
-export var inertia_factor := 0.1
+export var roll_rate := 0.5
+export var max_forward_speed := 100.0
+export var accel_rate := 2.0
+#export var decel_rate := 0.4
+export var inertia_factor := 65
 
 onready var yaw_gimbal := $YawGimbal
 onready var pitch_gimbal := $YawGimbal/PitchGimbal
@@ -55,12 +55,11 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	var desired_velocity
+	forward_speed = lerp(forward_speed, max_forward_speed * (_current_throttle_step / 4.0), 1/accel_rate * delta)
 	if _current_throttle_step != 0:
-		forward_speed = lerp(forward_speed, max_forward_speed * (_current_throttle_step / 4.0), accel_rate * delta)
 		desired_velocity = -ship_model.global_transform.basis.x * forward_speed
 	else: 
-		forward_speed = lerp(forward_speed, 0, decel_rate * delta)
 		desired_velocity = _stored_inertia_vector * forward_speed
 	var steering_vector = desired_velocity - velocity
-	velocity += steering_vector * inertia_factor
-	move_and_collide(velocity * delta)
+	velocity += steering_vector * (inertia_factor / 100.0)
+	move_and_slide(velocity, Vector3.UP)
