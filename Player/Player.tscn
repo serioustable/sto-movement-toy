@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player/Light cruiser_04.fbx" type="PackedScene" id=1]
 [ext_resource path="res://Player/CameraController.gd" type="Script" id=2]
 [ext_resource path="res://Player/ShipController.gd" type="Script" id=3]
+[ext_resource path="res://MotionTrail/MotionTrail.tscn" type="PackedScene" id=4]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 15.3504, 7.97083, 34.4919 )
@@ -17,6 +18,33 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.84448, 0 )
 
 [node name="Ship" parent="YawGimbal/PitchGimbal" instance=ExtResource( 1 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
+
+[node name="EngineTrail1" parent="YawGimbal/PitchGimbal/Ship" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.436, 11.6096, 10.9846 )
+cast_shadow = 0
+startColor = Color( 0, 0.905882, 1, 1 )
+
+[node name="EngineTrail2" parent="YawGimbal/PitchGimbal/Ship" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.436, 9.00697, 9.2048 )
+cast_shadow = 0
+startColor = Color( 0, 0.905882, 1, 1 )
+
+[node name="EngineTrail3" parent="YawGimbal/PitchGimbal/Ship" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.436, 8.88985, -9.02284 )
+cast_shadow = 0
+startColor = Color( 0, 0.905882, 1, 1 )
+
+[node name="EngineTrail4" parent="YawGimbal/PitchGimbal/Ship" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.436, 11.5528, -10.8562 )
+cast_shadow = 0
+startColor = Color( 0, 0.905882, 1, 1 )
+
+[node name="EngineTrail5" parent="YawGimbal/PitchGimbal/Ship" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 40.8115, 9.16554, 0.00171227 )
+cast_shadow = 0
+fromWidth = 1.0
+lifespan = 1.2
+startColor = Color( 0.870588, 0.505882, 0.0392157, 1 )
 
 [node name="CameraBase" type="Spatial" parent="."]
 script = ExtResource( 2 )

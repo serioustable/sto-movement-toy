@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
+[ext_resource path="res://TestWorldEnvironment.tres" type="Environment" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CubeMesh" id=1]
@@ -17,3 +18,10 @@ material/0 = null
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 255.869, -14.6327, 52.4603 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 1 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="WorldEnvironment"]
+transform = Transform( 0.999279, -0.00905565, 0.0368735, 0, 0.971143, 0.2385, -0.0379692, -0.238328, 0.970442, -104.417, 16.4043, 97.2748 )
+shadow_enabled = true
