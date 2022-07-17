@@ -1,0 +1,358 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UI/SettingsEditor.gd" type="Script" id=1]
+
+[node name="SettingsEditor" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -271.0
+margin_top = -174.0
+margin_right = 271.0
+margin_bottom = 174.0
+
+[node name="Panel" type="Panel" parent="PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 535.0
+margin_bottom = 341.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+
+[node name="OptionsContainer" type="VBoxContainer" parent="PanelContainer/Panel/MarginContainer"]
+margin_right = 508.0
+margin_bottom = 314.0
+
+[node name="MinYawSpeed" type="HBoxContainer" parent="PanelContainer/Panel/MarginContainer/OptionsContainer"]
+margin_right = 508.0
+margin_bottom = 24.0
+alignment = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/MinYawSpeed"]
+margin_right = 508.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+dragger_visibility = 2
+
+[node name="Label" type="Label" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/MinYawSpeed/HSplitContainer"]
+margin_top = 5.0
+margin_right = 450.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "Minimum Yaw Speed"
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/MinYawSpeed/HSplitContainer"]
+margin_left = 450.0
+margin_right = 508.0
+margin_bottom = 24.0
+focus_neighbour_left = NodePath("../../../ButtonContainer/CloseButton")
+focus_neighbour_top = NodePath("../../../ButtonContainer/CloseButton")
+focus_neighbour_right = NodePath("../../../ButtonContainer/SaveButton")
+focus_neighbour_bottom = NodePath("../../../MaxYawSpeed/HSplitContainer/LineEdit")
+focus_next = NodePath("../../../MaxYawSpeed/HSplitContainer/LineEdit")
+focus_previous = NodePath("../../../ButtonContainer/CloseButton")
+text = "5.0"
+align = 2
+max_length = 5
+
+[node name="MaxYawSpeed" type="HBoxContainer" parent="PanelContainer/Panel/MarginContainer/OptionsContainer"]
+margin_top = 28.0
+margin_right = 508.0
+margin_bottom = 52.0
+alignment = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/MaxYawSpeed"]
+margin_right = 508.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+dragger_visibility = 2
+
+[node name="Label" type="Label" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/MaxYawSpeed/HSplitContainer"]
+margin_top = 5.0
+margin_right = 450.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "Maximum Yaw Speed"
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/MaxYawSpeed/HSplitContainer"]
+margin_left = 450.0
+margin_right = 508.0
+margin_bottom = 24.0
+focus_neighbour_left = NodePath("../../../ButtonContainer/CloseButton")
+focus_neighbour_top = NodePath("../../../MinYawSpeed/HSplitContainer/LineEdit")
+focus_neighbour_right = NodePath("../../../ButtonContainer/SaveButton")
+focus_neighbour_bottom = NodePath("../../../MinPitchSpeed/HSplitContainer/LineEdit")
+focus_next = NodePath("../../../MinPitchSpeed/HSplitContainer/LineEdit")
+focus_previous = NodePath("../../../MinYawSpeed/HSplitContainer/LineEdit")
+text = "26.0"
+align = 2
+max_length = 5
+
+[node name="MinPitchSpeed" type="HBoxContainer" parent="PanelContainer/Panel/MarginContainer/OptionsContainer"]
+margin_top = 56.0
+margin_right = 508.0
+margin_bottom = 80.0
+alignment = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/MinPitchSpeed"]
+margin_right = 508.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+dragger_visibility = 2
+
+[node name="Label" type="Label" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/MinPitchSpeed/HSplitContainer"]
+margin_top = 5.0
+margin_right = 450.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "Minimum Pitch Speed"
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/MinPitchSpeed/HSplitContainer"]
+margin_left = 450.0
+margin_right = 508.0
+margin_bottom = 24.0
+focus_neighbour_left = NodePath("../../../ButtonContainer/CloseButton")
+focus_neighbour_top = NodePath("../../../MaxYawSpeed/HSplitContainer/LineEdit")
+focus_neighbour_right = NodePath("../../../ButtonContainer/SaveButton")
+focus_neighbour_bottom = NodePath("../../../MaxPitchSpeed/HSplitContainer/LineEdit")
+focus_next = NodePath("../../../MaxPitchSpeed/HSplitContainer/LineEdit")
+focus_previous = NodePath("../../../MaxYawSpeed/HSplitContainer/LineEdit")
+text = "26.0"
+align = 2
+max_length = 5
+
+[node name="MaxPitchSpeed" type="HBoxContainer" parent="PanelContainer/Panel/MarginContainer/OptionsContainer"]
+margin_top = 84.0
+margin_right = 508.0
+margin_bottom = 108.0
+alignment = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/MaxPitchSpeed"]
+margin_right = 508.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+dragger_visibility = 2
+
+[node name="Label" type="Label" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/MaxPitchSpeed/HSplitContainer"]
+margin_top = 5.0
+margin_right = 450.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "Maximum Pitch Speed"
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/MaxPitchSpeed/HSplitContainer"]
+margin_left = 450.0
+margin_right = 508.0
+margin_bottom = 24.0
+text = "26.0"
+align = 2
+max_length = 5
+
+[node name="MaxPitchAngle" type="HBoxContainer" parent="PanelContainer/Panel/MarginContainer/OptionsContainer"]
+margin_top = 112.0
+margin_right = 508.0
+margin_bottom = 136.0
+alignment = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/MaxPitchAngle"]
+margin_right = 508.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+dragger_visibility = 2
+
+[node name="Label" type="Label" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/MaxPitchAngle/HSplitContainer"]
+margin_top = 5.0
+margin_right = 450.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "Maximum Pitch Angle"
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/MaxPitchAngle/HSplitContainer"]
+margin_left = 450.0
+margin_right = 508.0
+margin_bottom = 24.0
+text = "26.0"
+align = 2
+max_length = 5
+
+[node name="MaxRollOffset" type="HBoxContainer" parent="PanelContainer/Panel/MarginContainer/OptionsContainer"]
+margin_top = 140.0
+margin_right = 508.0
+margin_bottom = 164.0
+alignment = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/MaxRollOffset"]
+margin_right = 508.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+dragger_visibility = 2
+
+[node name="Label" type="Label" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/MaxRollOffset/HSplitContainer"]
+margin_top = 5.0
+margin_right = 450.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "Maximum Roll Angle"
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/MaxRollOffset/HSplitContainer"]
+margin_left = 450.0
+margin_right = 508.0
+margin_bottom = 24.0
+text = "26.0"
+align = 2
+max_length = 5
+
+[node name="RollRate" type="HBoxContainer" parent="PanelContainer/Panel/MarginContainer/OptionsContainer"]
+margin_top = 168.0
+margin_right = 508.0
+margin_bottom = 192.0
+alignment = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/RollRate"]
+margin_right = 508.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+dragger_visibility = 2
+
+[node name="Label" type="Label" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/RollRate/HSplitContainer"]
+margin_top = 5.0
+margin_right = 450.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "Roll Rate"
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/RollRate/HSplitContainer"]
+margin_left = 450.0
+margin_right = 508.0
+margin_bottom = 24.0
+text = "26.0"
+align = 2
+max_length = 5
+
+[node name="MaxForwardSpeed" type="HBoxContainer" parent="PanelContainer/Panel/MarginContainer/OptionsContainer"]
+margin_top = 196.0
+margin_right = 508.0
+margin_bottom = 220.0
+alignment = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/MaxForwardSpeed"]
+margin_right = 508.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+dragger_visibility = 2
+
+[node name="Label" type="Label" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/MaxForwardSpeed/HSplitContainer"]
+margin_top = 5.0
+margin_right = 450.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "Maximum Forward Speed"
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/MaxForwardSpeed/HSplitContainer"]
+margin_left = 450.0
+margin_right = 508.0
+margin_bottom = 24.0
+text = "26.0"
+align = 2
+max_length = 5
+
+[node name="AccelRate" type="HBoxContainer" parent="PanelContainer/Panel/MarginContainer/OptionsContainer"]
+margin_top = 224.0
+margin_right = 508.0
+margin_bottom = 248.0
+alignment = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/AccelRate"]
+margin_right = 508.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+dragger_visibility = 2
+
+[node name="Label" type="Label" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/AccelRate/HSplitContainer"]
+margin_top = 5.0
+margin_right = 450.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "Acceleration Rate"
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/AccelRate/HSplitContainer"]
+margin_left = 450.0
+margin_right = 508.0
+margin_bottom = 24.0
+text = "26.0"
+align = 2
+max_length = 5
+
+[node name="InertiaFactor" type="HBoxContainer" parent="PanelContainer/Panel/MarginContainer/OptionsContainer"]
+margin_top = 252.0
+margin_right = 508.0
+margin_bottom = 276.0
+alignment = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/InertiaFactor"]
+margin_right = 508.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+dragger_visibility = 2
+
+[node name="Label" type="Label" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/InertiaFactor/HSplitContainer"]
+margin_top = 5.0
+margin_right = 450.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "Inertia Factor"
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/InertiaFactor/HSplitContainer"]
+margin_left = 450.0
+margin_right = 508.0
+margin_bottom = 24.0
+text = "26.0"
+align = 2
+max_length = 5
+
+[node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer/Panel/MarginContainer/OptionsContainer"]
+margin_top = 280.0
+margin_right = 508.0
+margin_bottom = 290.0
+size_flags_vertical = 3
+dragger_visibility = 2
+
+[node name="ButtonContainer" type="HBoxContainer" parent="PanelContainer/Panel/MarginContainer/OptionsContainer"]
+margin_top = 294.0
+margin_right = 508.0
+margin_bottom = 314.0
+alignment = 1
+
+[node name="SaveButton" type="Button" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/ButtonContainer"]
+margin_left = 177.0
+margin_right = 218.0
+margin_bottom = 20.0
+text = "Save"
+
+[node name="DefaultButton" type="Button" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/ButtonContainer"]
+margin_left = 222.0
+margin_right = 280.0
+margin_bottom = 20.0
+text = "Default"
+
+[node name="CloseButton" type="Button" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/ButtonContainer"]
+margin_left = 284.0
+margin_right = 331.0
+margin_bottom = 20.0
+text = "Close"
+
+[connection signal="pressed" from="PanelContainer/Panel/MarginContainer/OptionsContainer/ButtonContainer/SaveButton" to="." method="_on_SaveButton_pressed"]
+[connection signal="pressed" from="PanelContainer/Panel/MarginContainer/OptionsContainer/ButtonContainer/DefaultButton" to="." method="_on_DefaultButton_pressed"]
+[connection signal="pressed" from="PanelContainer/Panel/MarginContainer/OptionsContainer/ButtonContainer/CloseButton" to="." method="_on_CloseButton_pressed"]

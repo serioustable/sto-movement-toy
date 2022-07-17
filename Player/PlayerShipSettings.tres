@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://ShipSettings.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+min_yaw_speed = 5.0
+max_yaw_speed = 26.0
+min_pitch_speed = 5.0
+max_pitch_speed = 26.0
+max_pitch_angle = 60.0
+max_roll_offset = 45.0
+roll_rate = 0.45
+max_forward_speed = 100.0
+accel_rate = 0.8
+inertia_factor = 30.0

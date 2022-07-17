@@ -27,9 +27,9 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _process(delta: float) -> void:
 	#TEMPORARY
-	if Input.is_action_just_pressed("camera_right_click"):
+	if Input.is_action_just_pressed("camera_left_click"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	if Input.is_action_just_released("camera_right_click"):
+	if Input.is_action_just_released("camera_left_click"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if Input.is_action_just_released("camera_zoom_in"):
 		spring_arm_target_length -= spring_arm_step_rate

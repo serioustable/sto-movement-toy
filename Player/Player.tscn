@@ -1,50 +1,49 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Player/Light cruiser_04.fbx" type="PackedScene" id=1]
 [ext_resource path="res://Player/CameraController.gd" type="Script" id=2]
 [ext_resource path="res://Player/ShipController.gd" type="Script" id=3]
 [ext_resource path="res://MotionTrail/MotionTrail.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player/Imperial.gltf" type="PackedScene" id=5]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 15.3504, 7.97083, 34.4919 )
+extents = Vector3( 12.7422, 5.82558, 28.313 )
 
 [node name="Player" type="KinematicBody"]
 script = ExtResource( 3 )
 
 [node name="YawGimbal" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.84448, 0 )
 
 [node name="PitchGimbal" type="Spatial" parent="YawGimbal"]
 
-[node name="Ship" parent="YawGimbal/PitchGimbal" instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
+[node name="Ship" parent="YawGimbal/PitchGimbal" instance=ExtResource( 5 )]
+transform = Transform( -3, 0, -4.52987e-07, 0, 3, 0, 4.52987e-07, 0, -3, 0, 0, 6 )
+
+[node name="EngineTrail5" parent="YawGimbal/PitchGimbal/Ship" instance=ExtResource( 4 )]
+transform = Transform( -0.333333, 0, 5.03319e-08, 0, 0.333333, 0, -5.03319e-08, 0, -0.333333, 0.000572242, -0.0504832, -5.89962 )
+cast_shadow = 0
+fromWidth = 2.0
+lifespan = 1.2
+startColor = Color( 0.870588, 0.505882, 0.0392157, 1 )
 
 [node name="EngineTrail1" parent="YawGimbal/PitchGimbal/Ship" instance=ExtResource( 4 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.436, 11.6096, 10.9846 )
+transform = Transform( -0.333333, 0, 5.03319e-08, 0, 0.333333, 0, -5.03319e-08, 0, -0.333333, 3, 0.5, -6.5 )
 cast_shadow = 0
 startColor = Color( 0, 0.905882, 1, 1 )
 
 [node name="EngineTrail2" parent="YawGimbal/PitchGimbal/Ship" instance=ExtResource( 4 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.436, 9.00697, 9.2048 )
+transform = Transform( -0.333333, 0, 5.03319e-08, 0, 0.333333, 0, -5.03319e-08, 0, -0.333333, 3, -0.5, -6.5 )
 cast_shadow = 0
 startColor = Color( 0, 0.905882, 1, 1 )
 
 [node name="EngineTrail3" parent="YawGimbal/PitchGimbal/Ship" instance=ExtResource( 4 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.436, 8.88985, -9.02284 )
+transform = Transform( -0.333333, 0, 5.03319e-08, 0, 0.333333, 0, -5.03319e-08, 0, -0.333333, -3, -0.5, -6.5 )
 cast_shadow = 0
 startColor = Color( 0, 0.905882, 1, 1 )
 
 [node name="EngineTrail4" parent="YawGimbal/PitchGimbal/Ship" instance=ExtResource( 4 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.436, 11.5528, -10.8562 )
+transform = Transform( -0.333333, 0, 5.03319e-08, 0, 0.333333, 0, -5.03319e-08, 0, -0.333333, -3, 0.5, -6.5 )
 cast_shadow = 0
 startColor = Color( 0, 0.905882, 1, 1 )
-
-[node name="EngineTrail5" parent="YawGimbal/PitchGimbal/Ship" instance=ExtResource( 4 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 40.8115, 9.16554, 0.00171227 )
-cast_shadow = 0
-fromWidth = 1.0
-lifespan = 1.2
-startColor = Color( 0.870588, 0.505882, 0.0392157, 1 )
 
 [node name="CameraBase" type="Spatial" parent="."]
 script = ExtResource( 2 )
@@ -61,4 +60,5 @@ transform = Transform( 1, 0, 0, 0, 0.97437, -0.224951, 0, 0.224951, 0.97437, 0, 
 far = 10000.0
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.58273, -2.18823 )
 shape = SubResource( 1 )
