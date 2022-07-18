@@ -8,14 +8,13 @@ anchor_bottom = 1.0
 script = ExtResource( 1 )
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -271.0
-margin_top = -174.0
-margin_right = 271.0
-margin_bottom = 174.0
+anchor_left = 0.358854
+anchor_top = 0.338889
+anchor_right = 0.641146
+anchor_bottom = 0.661111
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="Panel" type="Panel" parent="PanelContainer"]
 margin_left = 7.0
@@ -156,6 +155,12 @@ text = "Maximum Pitch Speed"
 margin_left = 450.0
 margin_right = 508.0
 margin_bottom = 24.0
+focus_neighbour_left = NodePath("../../../ButtonContainer/CloseButton")
+focus_neighbour_top = NodePath("../../../MinPitchSpeed/HSplitContainer/LineEdit")
+focus_neighbour_right = NodePath("../../../ButtonContainer/SaveButton")
+focus_neighbour_bottom = NodePath("../../../MaxPitchAngle/HSplitContainer/LineEdit")
+focus_next = NodePath("../../../MaxPitchAngle/HSplitContainer/LineEdit")
+focus_previous = NodePath("../../../MinPitchSpeed/HSplitContainer/LineEdit")
 text = "26.0"
 align = 2
 max_length = 5
@@ -339,18 +344,36 @@ alignment = 1
 margin_left = 177.0
 margin_right = 218.0
 margin_bottom = 20.0
+focus_neighbour_left = NodePath("../CloseButton")
+focus_neighbour_top = NodePath("../../InertiaFactor/HSplitContainer/LineEdit")
+focus_neighbour_right = NodePath("../DefaultButton")
+focus_neighbour_bottom = NodePath("../../MinYawSpeed/HSplitContainer/LineEdit")
+focus_next = NodePath("../DefaultButton")
+focus_previous = NodePath("../../InertiaFactor/HSplitContainer/LineEdit")
 text = "Save"
 
 [node name="DefaultButton" type="Button" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/ButtonContainer"]
 margin_left = 222.0
 margin_right = 280.0
 margin_bottom = 20.0
+focus_neighbour_left = NodePath("../SaveButton")
+focus_neighbour_top = NodePath("../../InertiaFactor/HSplitContainer/LineEdit")
+focus_neighbour_right = NodePath("../CloseButton")
+focus_neighbour_bottom = NodePath("../../MinYawSpeed/HSplitContainer/LineEdit")
+focus_next = NodePath("../CloseButton")
+focus_previous = NodePath("../SaveButton")
 text = "Default"
 
 [node name="CloseButton" type="Button" parent="PanelContainer/Panel/MarginContainer/OptionsContainer/ButtonContainer"]
 margin_left = 284.0
 margin_right = 331.0
 margin_bottom = 20.0
+focus_neighbour_left = NodePath("../DefaultButton")
+focus_neighbour_top = NodePath("../../InertiaFactor/HSplitContainer/LineEdit")
+focus_neighbour_right = NodePath("../SaveButton")
+focus_neighbour_bottom = NodePath("../../MinYawSpeed/HSplitContainer/LineEdit")
+focus_next = NodePath("../../MinYawSpeed/HSplitContainer/LineEdit")
+focus_previous = NodePath("../DefaultButton")
 text = "Close"
 
 [connection signal="pressed" from="PanelContainer/Panel/MarginContainer/OptionsContainer/ButtonContainer/SaveButton" to="." method="_on_SaveButton_pressed"]

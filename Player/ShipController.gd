@@ -2,6 +2,8 @@ extends KinematicBody
 
 var settings : ShipSettings setget set_settings
 
+signal throttle_changed(new_throttle)
+
 var min_yaw_speed := 5.0
 var max_yaw_speed := 26.0
 var min_pitch_speed := 5.0
@@ -50,11 +52,13 @@ func _process(delta: float) -> void:
 		_current_throttle_step = clamp(_current_throttle_step, -1, 4)
 		if _current_throttle_step == 0:
 			_stored_inertia_vector = ship_model.global_transform.basis.z
+		emit_signal("throttle_changed", _current_throttle_step)
 	if Input.is_action_just_pressed("movement_throttle_down"):
 		_current_throttle_step -= 1
 		if _current_throttle_step == 0:
 			_stored_inertia_vector = ship_model.global_transform.basis.z
 		_current_throttle_step = clamp(_current_throttle_step, -1, 4)
+		emit_signal("throttle_changed", _current_throttle_step)
 	if Input.is_action_just_pressed("movement_toggle_full_stop"):
 		if _current_throttle_step == -1 or _current_throttle_step == 4:
 			_current_throttle_step = 0
@@ -64,6 +68,7 @@ func _process(delta: float) -> void:
 			_current_throttle_step = 4
 		if _current_throttle_step == 0:
 			_stored_inertia_vector = ship_model.global_transform.basis.z
+		emit_signal("throttle_changed", _current_throttle_step)
 
 	_yaw_input = Input.get_axis("movement_yaw_right", "movement_yaw_left")
 	_pitch_input = Input.get_axis("movement_pitch_down", "movement_pitch_up")
